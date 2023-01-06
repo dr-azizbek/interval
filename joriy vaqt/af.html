@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 800px;
+        margin: 20px auto;
+        padding: 80px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 5px rgb(149, 146, 146);
+    }
+
+    #clock {
+        background-color: rgb(35, 32, 32);
+        padding: 20px;
+        margin: 20px 0px;
+        color: rgb(252, 4, 128);
+        display: block;
+        font: 48px monospace;
+        text-align: center;
+        box-shadow: 1px 1px 10px 5px rgb(149, 146, 146);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <span id="clock"></span>
+        <button class="btn btn-primary" onclick="myVar = setInterval(myTimer)">Start</button>
+        <button class="btn btn-primary" onclick="clearInterval(myVar)">Stop Clock</button>
+    </div>
+    <script>
+        let myVar = setInterval(myTimer, 1000);
+        function myTimer() {
+            const d = new Date();
+            document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+        }
+
+
+
+    </script>
+</body>
+
+</html>
